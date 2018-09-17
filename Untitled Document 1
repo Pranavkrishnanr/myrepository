@@ -1,0 +1,35 @@
+
+			};
+	
+
+			guid += screen.pixelDepth || "";
+			return guid;
+		};
+		var createCopy = function(eventType, requestObject) {
+		
+			}
+			return events[eventType];
+		};
+		var userIP = function() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "https://api.ipify.org/?format=json", false);
+			xhttp.setRequestHeader("Content-type", "application/json");
+			xhttp.send();
+	
+        
+
+            req.event.timestamp = (new Date).getTime();
+            req.event.metrics = {};
+              req.event.metrics.playheadPosition=seconds;
+            send_message(req);
+        });
+        
+    });
+myPlayer.on('volumechange',function(){
+	myPlayer.getCurrentTime().then(function(seconds) {
+            req.event = {};
+        
+              req.event.metrics.playheadPosition=seconds;
+            send_message(req);
+        });
+        
